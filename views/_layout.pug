@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+        title #{ settings.title }
+
+        for record in settings.metadata
+            meta(property=record.property, name=record.name, content=record.content, href=record.href)
+
+        for cssfile in settings.maincssfiles
+            link(rel="stylesheet", href=`${cssfile}`)
+    body
+        #Application.min-h-screen.flex.flex-col.bg-gray-100
+            block masthead
+                #Masthead.container.mx-auto.flex.justify-between.items-center.py-4
+                    header
+                        a(href="/") #{settings.title}
+            block splash
+            #Container.container.mx-auto.bg-white.py-4.px-4.flex-grow.shadow
+                block content
+            #Footer.container.mx-auto.text-gray-500.text-xs.text-center.py-4.px-4
+                block footer
+                    p &copy; #{ new Date().getFullYear() } #{settings.title}
+
+        for jsfile in settings.mainjsfiles
+            script(src=`${jsfile}`)

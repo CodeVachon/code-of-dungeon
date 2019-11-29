@@ -1,0 +1,12 @@
+[
+  {
+    "UserAgent": "AhrefsBot",
+    "allow": "/",
+    "CrawlDelay": 10
+  },
+  {
+    "UserAgent": "Bingbot",
+    "allow": "/",
+    "CrawlDelay": 10
+  }
+]

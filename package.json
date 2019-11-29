@@ -1,0 +1,64 @@
+{
+  "name": "app-bootstrap",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:CodeVachon/2019-app-bootstrap.git",
+  "author": "Christopher Vachon <chrisv@labx.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --coverage",
+    "build": "node .bundler.js",
+    "dev": "rm -fr .parcel_cache && nodemon server.js",
+    "start": "node server.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "nodemonConfig": {
+    "verbose": false,
+    "ignore": [
+      "public/*",
+      "*.log",
+      ".git/*",
+      "node_modules/*",
+      "src/*",
+      "*.md",
+      "Dockerfile"
+    ],
+    "ext": "js,json,pug",
+    "env": {
+      "NODE_ENV": "local",
+      "PORT": 2299
+    }
+  },
+  "dependencies": {
+    "@christophervachon/error-messages": "^0.0.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "express-robots": "^0.1.6",
+    "extend": "^3.0.2",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.4",
+    "@christophervachon/copyfiles": "^0.0.0",
+    "autoprefixer": "^9.7.2",
+    "nodemon": "^1.19.4",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.4.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "reload": "^3.0.3",
+    "sass": "^1.23.7",
+    "tailwindcss": "^1.1.4"
+  },
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ]
+}
